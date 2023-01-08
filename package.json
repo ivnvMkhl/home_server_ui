@@ -1,47 +1,47 @@
 {
-    "name": "home_server_ui",
-    "version": "1.0.0",
-    "private": true,
-    "description": "frontend for home server",
-    "main": "main.tsx",
-    "lint-staged": {
-        "**/*": "prettier --write --ignore-unknown"
-      },
-    "scripts": {
-        "start": "vite",
-        "dev": "vite",
-        "build": "tsc && vite build",
-        "preview": "vite preview",
-        "prepare": "husky install",
-        "test": "tsc"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ivnvMkhl/home_server_ui.git"
-    },
-    "keywords": [
-        "react",
-        "ui",
-        "IoT"
-    ],
-    "author": "iMkhl mkhl.ivnv@gmail.com",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ivnvMkhl/home_server_ui/issues"
-    },
-    "homepage": "https://github.com/ivnvMkhl/home_server_ui#readme",
-    "dependencies": {
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    },
-    "devDependencies": {
-        "@types/node": "18.11.18",
-        "@types/react": "18.0.26",
-        "@types/react-dom": "18.0.10",
-        "@vitejs/plugin-react": "3.0.0",
-        "husky": "8.0.3",
-        "prettier": "2.8.2",
-        "typescript": "4.9.3",
-        "vite": "4.0.4"
-    }
+  "name": "home_server_ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "frontend for home server",
+  "main": "main.tsx",
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "test": "prettier --write --ignore-unknown && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivnvMkhl/home_server_ui.git"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "IoT"
+  ],
+  "author": "iMkhl mkhl.ivnv@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivnvMkhl/home_server_ui/issues"
+  },
+  "homepage": "https://github.com/ivnvMkhl/home_server_ui#readme",
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.10",
+    "@vitejs/plugin-react": "3.0.0",
+    "husky": "8.0.3",
+    "prettier": "2.8.2",
+    "typescript": "4.9.3",
+    "vite": "4.0.4"
+  }
 }
