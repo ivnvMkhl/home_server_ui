@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const App: React.FC = () => {
-    return <div>123</div>;
+    return <div>{import.meta.env.VITE_PORT}</div>;
 };
