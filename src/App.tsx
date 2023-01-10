@@ -1,5 +1,15 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
+import { Button } from './components/Primitives/Button/Button';
 
 export const App: React.FC = () => {
-    return <div>{import.meta.env.VITE_PORT}</div>;
+    const queryClient = new QueryClient();
+
+    return (
+        <QueryClientProvider client={queryClient}>
+            <div>
+                <Button>Test</Button>
+            </div>
+        </QueryClientProvider>
+    );
 };
