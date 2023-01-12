@@ -4,10 +4,12 @@ import React from 'react';
 
 type ButtonProps = AntdButtonProps;
 
-export const Button: React.FC<ButtonProps> = ({ children, className, ...restProps }) => {
+const Button: React.FC<ButtonProps> = ({ children, className, ...restProps }) => {
     return (
         <AntdButton className={className} {...restProps}>
             {children}
         </AntdButton>
     );
 };
+
+export { Button };

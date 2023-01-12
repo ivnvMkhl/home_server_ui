@@ -6,11 +6,6 @@ import path from 'path';
 export default defineConfig(({ command, mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
-    const buildCssModuleClassName = (name: string, filename: string) => {
-        const pathPart = Array.from(new Set(filename.split('src/')[1].replace('.module.css', '').split('/'))).join('__');
-        return `${pathPart}___${name}}`;
-    };
-
     const commonPath: UserConfigExport = {
         plugins: [react()],
         resolve: {
@@ -21,7 +16,7 @@ export default defineConfig(({ command, mode }) => {
         css: {
             modules: {
                 localsConvention: 'camelCase',
-                generateScopedName: buildCssModuleClassName,
+                generateScopedName: '[name]__[local]__[hash:base64:5]',
             },
         },
     };

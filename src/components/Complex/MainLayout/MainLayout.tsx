@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header } from '@components/Complex/Header/Header';
-import { Button } from 'antd';
+import { Button } from '@components/Primitives/Button';
+import { Header } from 'antd/es/layout/layout';
 
 type MainLayoutProps = {
     children?: React.ReactNode;
@@ -9,7 +9,7 @@ type MainLayoutProps = {
     withoutHeader?: boolean;
 };
 
-export const MainLayout: React.FC<MainLayoutProps> = ({ children, withoutHeader }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({ children, withoutHeader }) => {
     return (
         <div className="layout_wrapper">
             {withoutHeader ? null : <Header />}
@@ -20,3 +20,5 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children, withoutHeader 
         </div>
     );
 };
+
+export { MainLayout };

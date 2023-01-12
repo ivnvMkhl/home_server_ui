@@ -1,8 +1,9 @@
+import { MainLayout } from '@components/Complex/MainLayout';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
-import { MainLayout } from '@components/Complex/MainLayout/MainLayout';
+import './components/Theme/main.theme.css';
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
     const queryClient = new QueryClient();
 
     return (
@@ -11,3 +12,5 @@ export const App: React.FC = () => {
         </QueryClientProvider>
     );
 };
+
+export { App };
