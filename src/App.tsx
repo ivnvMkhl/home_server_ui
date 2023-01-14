@@ -1,15 +1,23 @@
+import { AuthorizationPage } from '@components/Complex/AuthorizationPage';
+import { MainLayout } from '@components/Complex/MainLayout';
+import { MAIN_THEME } from '@components/Theme/mainTheme';
+import { ThemeProvider } from '@components/Theme/ThemeProvider/ThemeProvider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
-import { Button } from './components/Primitives/Button/Button';
+import './components/Theme/main.theme.css';
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
     const queryClient = new QueryClient();
 
     return (
         <QueryClientProvider client={queryClient}>
-            <div>
-                <Button>Test</Button>
-            </div>
+            <ThemeProvider theme={MAIN_THEME}>
+                <MainLayout>
+                    <AuthorizationPage />
+                </MainLayout>
+            </ThemeProvider>
         </QueryClientProvider>
     );
 };
+
+export { App };
