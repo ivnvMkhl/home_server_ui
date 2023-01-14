@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button } from '@components/Primitives/Button';
-import { Header } from 'antd/es/layout/layout';
+import { Header } from '@components/Complex/Header';
+
+import styles from './MainLayout.module.css';
 
 type MainLayoutProps = {
     children?: React.ReactNode;
@@ -11,12 +12,9 @@ type MainLayoutProps = {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children, withoutHeader }) => {
     return (
-        <div className="layout_wrapper">
+        <div className={styles.wrapper}>
             {withoutHeader ? null : <Header />}
-            <div className="content">
-                {children}
-                <Button>test</Button>
-            </div>
+            <div className="content">{children}</div>
         </div>
     );
 };
