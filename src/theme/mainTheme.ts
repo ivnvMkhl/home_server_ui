@@ -1,5 +1,5 @@
-import { TextSize, ColorValue } from './themeVariables';
 import { ThemeConfig } from './ThemeProvider';
+import { ColorValue, TextSize } from './themeVariables';
 
 const MAIN_THEME: Readonly<ThemeConfig> = {
     token: {

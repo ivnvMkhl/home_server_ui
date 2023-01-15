@@ -1,6 +1,6 @@
+import React from 'react';
 import { Button as AntdButton } from 'antd';
 import { ButtonProps as AntdButtonProps } from 'antd/lib/button/button';
-import React from 'react';
 
 type ButtonProps = AntdButtonProps;
 

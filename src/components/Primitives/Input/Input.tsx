@@ -1,5 +1,5 @@
-import { Input as AntdInput, InputProps as AntdInputProps } from 'antd';
 import React from 'react';
+import { Input as AntdInput, InputProps as AntdInputProps } from 'antd';
 
 const { TextArea, Search, Password, Group } = AntdInput;
 
@@ -13,5 +13,5 @@ const Input: React.FC<InputProps> = ({ children, className, ...restProps }) => {
     );
 };
 
-export { Input, TextArea, Search, Password, Group };
+export { Group, Input, Password, Search, TextArea };
 export type { InputProps };

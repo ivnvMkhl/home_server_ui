@@ -1,5 +1,5 @@
-import { Title } from '@src/components/Primitives/Typography';
 import React from 'react';
+import { Title } from '@src/components/Primitives/Typography';
 
 type HomePageProps = {};
 

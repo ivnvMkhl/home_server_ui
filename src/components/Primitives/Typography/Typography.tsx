@@ -1,8 +1,8 @@
 import React from 'react';
-import { Typography as AntdTypography } from 'antd';
-import { TextProps as AntdTextProps } from 'antd/es/typography/Text';
 import { ColorValue } from '@src/theme/themeVariables/colorVariables';
 import { TextSize } from '@src/theme/themeVariables/textSizeVariables';
+import { Typography as AntdTypography } from 'antd';
+import { TextProps as AntdTextProps } from 'antd/es/typography/Text';
 
 const Typography = AntdTypography;
 

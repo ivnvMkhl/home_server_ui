@@ -18,4 +18,4 @@ const colorVariablesDict: readonly [string, ColorValue][] = [
     ['--color-text-inverse', ColorValue.TEXT_INVERSE],
 ];
 
-export { colorVariablesDict, ColorValue };
+export { ColorValue, colorVariablesDict };

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Input, Password } from '@components/Primitives/Input';
-import { Link, Title } from '@components/Primitives/Typography';
 import { Button } from '@components/Primitives/Button';
 import { Divider } from '@components/Primitives/Divider';
+import { Input, Password } from '@components/Primitives/Input';
+import { Link, Title } from '@components/Primitives/Typography';
+import { useNavigate } from '@src/routing/Router';
 
 import styles from './RegistrationPage.module.css';
-import { useNavigate } from '@src/routing/Router';
 
 type RegistrationPageProps = {};
 

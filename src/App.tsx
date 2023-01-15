@@ -1,10 +1,10 @@
 import React from 'react';
-
 import { useRoutes } from '@routing/Router';
 import { MainRouter } from '@src/routing/routers';
 
-import '@src/theme/main.theme.css';
 import { MainLayout } from './components/Complex/MainLayout';
+
+import '@src/theme/main.theme.css';
 
 const App: React.FC = () => {
     const routes = useRoutes(MainRouter);

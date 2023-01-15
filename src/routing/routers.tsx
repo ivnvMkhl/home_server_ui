@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navigate, RouteObject } from '@routing/Router';
-import { HomePage } from '@src/components/Pages/HomePage/HomePage';
-import { LoginPage } from '@src/components/Complex/AuthorizationPage/components/LoginPage';
 import { AuthorizationPage } from '@src/components/Complex/AuthorizationPage';
+import { LoginPage } from '@src/components/Complex/AuthorizationPage/components/LoginPage';
 import { RegistrationPage } from '@src/components/Complex/AuthorizationPage/components/RegistrationPage';
+import { HomePage } from '@src/components/Pages/HomePage/HomePage';
 
 const MainRouter: RouteObject[] = [
     { path: '/', element: <HomePage /> },
@@ -17,4 +17,4 @@ const AuthRouter: RouteObject[] = [
     { path: '*', element: <div>404 page</div> },
 ];
 
-export { MainRouter, AuthRouter };
+export { AuthRouter, MainRouter };
