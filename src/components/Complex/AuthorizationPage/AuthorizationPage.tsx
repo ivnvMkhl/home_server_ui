@@ -1,20 +1,16 @@
+import { useRoutes } from '@src/routing/Router';
+import { AuthRouter } from '@src/routing/routers';
 import React from 'react';
-import { Input, Password } from '@components/Primitives/Input';
-import { Button } from '@components/Primitives/Button';
 
 import styles from './AuthorizationPage.module.css';
 
 type AuthorizationPageProps = {};
 
 const AuthorizationPage: React.FC<AuthorizationPageProps> = ({}) => {
+    const routes = useRoutes(AuthRouter);
     return (
         <div className={styles.wrapper}>
-            <div className={styles.authForm}>
-                <Input />
-
-                <Password />
-                <Button>Login</Button>
-            </div>
+            <div className={styles.formContainer}>{routes}</div>
         </div>
     );
 };

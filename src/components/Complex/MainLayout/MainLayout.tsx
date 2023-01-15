@@ -8,12 +8,13 @@ type MainLayoutProps = {
     isLoading?: boolean;
     isError?: boolean;
     withoutHeader?: boolean;
+    title?: string;
 };
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children, withoutHeader }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({ children, title, withoutHeader }) => {
     return (
         <div className={styles.wrapper}>
-            {withoutHeader ? null : <Header />}
+            {withoutHeader ? null : <Header title={title} />}
             <div className="content">{children}</div>
         </div>
     );

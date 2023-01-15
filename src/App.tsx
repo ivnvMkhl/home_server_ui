@@ -1,23 +1,15 @@
-import { AuthorizationPage } from '@components/Complex/AuthorizationPage';
-import { MainLayout } from '@components/Complex/MainLayout';
-import { MAIN_THEME } from '@components/Theme/mainTheme';
-import { ThemeProvider } from '@components/Theme/ThemeProvider/ThemeProvider';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
-import './components/Theme/main.theme.css';
+
+import { useRoutes } from '@routing/Router';
+import { MainRouter } from '@src/routing/routers';
+
+import '@src/theme/main.theme.css';
+import { MainLayout } from './components/Complex/MainLayout';
 
 const App: React.FC = () => {
-    const queryClient = new QueryClient();
+    const routes = useRoutes(MainRouter);
 
-    return (
-        <QueryClientProvider client={queryClient}>
-            <ThemeProvider theme={MAIN_THEME}>
-                <MainLayout>
-                    <AuthorizationPage />
-                </MainLayout>
-            </ThemeProvider>
-        </QueryClientProvider>
-    );
+    return <MainLayout title="HomeApp">{routes}</MainLayout>;
 };
 
 export { App };
