@@ -1,4 +1,6 @@
 import React from 'react';
+import { ColorValue } from '@src/theme/themeVariables/colorVariables';
+import { TextSize } from '@src/theme/themeVariables/textSizeVariables';
 import { Typography as AntdTypography } from 'antd';
 import { TextProps as AntdTextProps } from 'antd/es/typography/Text';
 
@@ -6,20 +8,23 @@ const Typography = AntdTypography;
 
 const { Link, Paragraph, Text: AntdText, Title } = Typography;
 
+type SizeVariants = 'small' | 'medium' | 'large' | 'xlarge';
+
 type TextProps = AntdTextProps & {
-    size: 'small' | 'medium' | 'large' | 'xlarge';
+    size?: SizeVariants;
+    color?: ColorValue;
 };
 
-enum FontSize {
-    'small' = '10px',
-    'medium' = '12px',
-    'large' = '16px',
-    'xlarge' = '20px',
-}
+const FontSizes: Readonly<Record<SizeVariants, string>> = {
+    small: `${TextSize.SMALL}px`,
+    medium: `${TextSize.MEDIUM}px`,
+    large: `${TextSize.LARGE}px`,
+    xlarge: `${TextSize.XLARGE}px`,
+};
 
-const Text: React.FC<TextProps & React.RefAttributes<HTMLSpanElement>> = ({ children, size, style, ...restProps }) => {
+const Text: React.FC<TextProps & React.RefAttributes<HTMLSpanElement>> = ({ children, size, style, color, ...restProps }) => {
     return (
-        <AntdText style={{ fontSize: FontSize[size], ...style }} {...restProps}>
+        <AntdText style={{ fontSize: size ? FontSizes[size] : undefined, color: color, ...style }} {...restProps}>
             {children}
         </AntdText>
     );

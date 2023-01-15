@@ -1,3 +1,3 @@
-import { v4 as uuidv4, v5 as uuidv5, parse as uuidParse } from 'uuid';
+import { parse as uuidParse, v4 as uuidv4, v5 as uuidv5 } from 'uuid';
 
-export { uuidv4, uuidv5, uuidParse };
+export { uuidParse, uuidv4, uuidv5 };

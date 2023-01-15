@@ -1,7 +1,7 @@
+import React from 'react';
 import { ConfigProvider } from 'antd';
 import { ConfigProviderProps } from 'antd/es/config-provider';
 import { ThemeConfig } from 'antd/es/config-provider/context';
-import React from 'react';
 
 type ThemeProviderProps = ConfigProviderProps;
 

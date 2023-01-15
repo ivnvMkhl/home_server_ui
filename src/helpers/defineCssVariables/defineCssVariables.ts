@@ -1,4 +1,4 @@
-const defineCssVariables = (variablesDict: [string, string][]) => {
+const defineCssVariables = (variablesDict: readonly [string, string][]) => {
     const style = document.createElement('style');
     style.setAttribute('type', 'text/css');
     const styleString = `

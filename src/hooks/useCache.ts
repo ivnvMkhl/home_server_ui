@@ -1,4 +1,4 @@
-import { useQuery, QueryKey, UseQueryOptions } from '@tanstack/react-query';
+import { QueryKey, useQuery, UseQueryOptions } from '@tanstack/react-query';
 
 type OptionType<TQueryFnData, TError, TData, TQueryKey extends QueryKey = QueryKey> = Omit<
     UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>,
