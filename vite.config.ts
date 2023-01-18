@@ -10,7 +10,8 @@ export default defineConfig(({ command, mode }) => {
         plugins: [react()],
         resolve: {
             alias: {
-                '@routing': path.resolve(__dirname, './src/routing'),
+                '@routing': path.resolve(__dirname, './src/services/routing'),
+                '@services': path.resolve(__dirname, './src/services'),
                 '@components': path.resolve(__dirname, './src/components'),
                 '@src': path.resolve(__dirname, './src'),
                 '@helpers': path.resolve(__dirname, './src/helpers'),

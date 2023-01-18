@@ -5,7 +5,7 @@ import { Divider } from '@components/Primitives/Divider';
 import { Input, Password } from '@components/Primitives/Input';
 import { Link, Title } from '@components/Primitives/Typography';
 import { Form, RuleRender } from '@src/components/Primitives/Form';
-import { useNavigate } from '@src/routing/Router';
+import { useNavigate } from '@src/services/routing/Router';
 
 import styles from './RegistrationPage.module.css';
 

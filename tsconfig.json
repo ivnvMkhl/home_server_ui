@@ -20,7 +20,8 @@
             "@hooks/*": ["hooks/*"],
             "@src/*": ["*"],
             "@components/*": ["components/*"],
-            "@routing/*": ["routing/*"],
+            "@routing/*": ["services/routing/*"],
+            "@services/*": ["services/*"],
             "@helpers/*": ["helpers/*"],
             "@interfaces/*": ["interfaces/*"]
         }

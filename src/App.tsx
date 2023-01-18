@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRoutes } from '@routing/Router';
-import { MainRouter } from '@src/routing/routers';
+import { MainRouter } from '@routing/routers';
 
 import { MainLayout } from './components/Complex/MainLayout';
 

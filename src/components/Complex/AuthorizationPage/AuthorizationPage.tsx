@@ -1,6 +1,6 @@
 import React from 'react';
-import { useRoutes } from '@src/routing/Router';
-import { AuthRouter } from '@src/routing/routers';
+import { useRoutes } from '@routing/Router';
+import { AuthRouter } from '@routing/routers';
 
 import styles from './AuthorizationPage.module.css';
 
