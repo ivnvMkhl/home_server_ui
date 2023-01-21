@@ -1,37 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AuthFormLabels } from '@components/Complex/AuthorizationPage/AuthorizationPage.constants';
 import { Button } from '@components/Primitives/Button';
 import { Divider } from '@components/Primitives/Divider';
 import { Input, Password } from '@components/Primitives/Input';
 import { Link, Title } from '@components/Primitives/Typography';
+import { Auth } from '@hooks/Auth';
 import { Form } from '@src/components/Primitives/Form';
+import { LoginForm, LoginFormFieldName } from '@src/interfaces/auth';
 import { useNavigate } from '@src/services/routing/Router';
 
 import styles from './LoginPage.module.css';
 
-type LoginPageProps = {
-    onLoginSubmit?: (values: FormValues) => void;
-};
-
-enum FormItem {
-    EMAIL = 'email',
-    PASSWORD = 'password',
-}
-
-type FormValues = Record<FormItem, string>;
-
-const LoginPage: React.FC<LoginPageProps> = ({ onLoginSubmit }) => {
+const LoginPage: React.FC = () => {
+    const [currentUser, setCurrentUser] = useState<LoginForm>();
+    const { data, isFetching } = Auth.useLogin(currentUser);
     const navigate = useNavigate();
+
     const handleRegistrationLink = () => navigate('/auth/registration');
 
+    const handleLoginButton = (user: LoginForm) => setCurrentUser(user);
     return (
         <>
-            <Form className={styles.authForm} layout="vertical" name="login" onFinish={onLoginSubmit}>
+            <Form className={styles.authForm} layout="vertical" name="login" onFinish={handleLoginButton}>
                 <Title level={2} type="secondary">
                     {AuthFormLabels.LOGIN}
                 </Title>
                 <Form.Item
-                    name={FormItem.EMAIL}
+                    name={LoginFormFieldName.EMAIL}
                     rules={[
                         {
                             required: true,
@@ -46,14 +41,14 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSubmit }) => {
                     <Input placeholder={AuthFormLabels.EMAIL} />
                 </Form.Item>
                 <Form.Item
-                    name={FormItem.PASSWORD}
+                    name={LoginFormFieldName.PASSWORD}
                     rules={[
                         {
                             required: true,
                             message: 'Please input your password',
                         },
                         {
-                            min: 8,
+                            min: 4,
                             message: 'Password min 8 symbols',
                         },
                     ]}
@@ -61,7 +56,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSubmit }) => {
                     <Password placeholder={AuthFormLabels.PASSWORD} />
                 </Form.Item>
                 <Form.Item>
-                    <Button htmlType="submit" type="primary" block>
+                    <Button htmlType="submit" type="primary" loading={isFetching} block>
                         {AuthFormLabels.LOGIN}
                     </Button>
                 </Form.Item>

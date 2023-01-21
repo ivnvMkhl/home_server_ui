@@ -5,43 +5,33 @@ import { Divider } from '@components/Primitives/Divider';
 import { Input, Password } from '@components/Primitives/Input';
 import { Link, Title } from '@components/Primitives/Typography';
 import { Form, RuleRender } from '@src/components/Primitives/Form';
+import { RegistrationFormFieldName } from '@src/interfaces/auth';
 import { useNavigate } from '@src/services/routing/Router';
 
 import styles from './RegistrationPage.module.css';
 
-type RegistrationPageProps = {
-    onRegistrationSubmit?: (values: FormValues) => void;
-};
-
-enum FormItem {
-    USERNAME = 'username',
-    EMAIL = 'email',
-    PASSWORD = 'password',
-    CONFIRM_PASSWORD = 'confirmPassword',
-}
-
-type FormValues = Record<FormItem, string>;
-
-const RegistrationPage: React.FC<RegistrationPageProps> = ({ onRegistrationSubmit }) => {
+const RegistrationPage: React.FC = () => {
     const navigate = useNavigate();
     const handleLoginLink = () => navigate('/auth');
     const validateConfirmPassword: RuleRender = ({ getFieldValue }) => ({
         validator(_, value) {
-            if (!value || getFieldValue(FormItem.PASSWORD) === value) {
+            if (!value || getFieldValue(RegistrationFormFieldName.PASSWORD) === value) {
                 return Promise.resolve();
             }
             return Promise.reject(new Error('The two passwords that you entered do not match!'));
         },
     });
 
+    const handleRegistationButton = () => {};
+
     return (
         <>
-            <Form className={styles.authForm} layout="vertical" name="login" onFinish={onRegistrationSubmit}>
+            <Form className={styles.authForm} layout="vertical" name="login" onFinish={handleRegistationButton}>
                 <Title level={2} type="secondary">
                     {AuthFormLabels.REGISTRATION}
                 </Title>
                 <Form.Item
-                    name={FormItem.EMAIL}
+                    name={RegistrationFormFieldName.EMAIL}
                     rules={[
                         {
                             required: true,
@@ -56,7 +46,7 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({ onRegistrationSubmi
                     <Input placeholder={AuthFormLabels.EMAIL} />
                 </Form.Item>
                 <Form.Item
-                    name={FormItem.USERNAME}
+                    name={RegistrationFormFieldName.USERNAME}
                     rules={[
                         {
                             required: true,
@@ -71,7 +61,7 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({ onRegistrationSubmi
                     <Input placeholder={AuthFormLabels.USERNAME} />
                 </Form.Item>
                 <Form.Item
-                    name={FormItem.PASSWORD}
+                    name={RegistrationFormFieldName.PASSWORD}
                     rules={[
                         {
                             required: true,
@@ -86,8 +76,8 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({ onRegistrationSubmi
                     <Password placeholder={AuthFormLabels.PASSWORD} />
                 </Form.Item>
                 <Form.Item
-                    name={FormItem.CONFIRM_PASSWORD}
-                    dependencies={[FormItem.PASSWORD]}
+                    name={RegistrationFormFieldName.CONFIRM_PASSWORD}
+                    dependencies={[RegistrationFormFieldName.PASSWORD]}
                     rules={[
                         {
                             required: true,
